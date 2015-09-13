@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Facebook Login JavaScript Example</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1685493761670460";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>
+    $( document ).ready(function() {
+        $('#logoutBtn').hide();
+        $('#userDetails').hide();
+    });
+
+    function fbAsyncInit() {
+        FB.init({
+            appId      : '1685493761670460',
+            status     : true, // check login status
+            cookie     : true, // enable cookies to allow the server to access the session
+            xfbml      : true  // parse XFBML
+        });
+    }
+    function logIn() {
+        FB.login(
+                function(response) {
+                    if (response.status== 'connected') {
+                        FB.api('/me', function(response) {
+                            console.log(response);
+                            console.log('Good to see you, ' + response.name + '.');
+                            $('#loginBtn').hide();
+                            $('#logoutBtn').show();
+                            $('#userDetails').show();
+                            $('#userInfo').html(response.name + '' + response.location.name);
+
+                        });
+
+                        FB.api("/me/picture?width=200&redirect=0&type=normal&height=200", function (response) {
+                            if (response && !response.error) {
+                                /* handle the result */
+                                console.log('PIC ::', response);
+                                $('#userPic').attr('src', response.data.url);
+                            }
+                        });
+                    }
+                }
+                ,{
+                    scope: "email"
+                }
+        );
+    }
+
+    function logOut() {
+        FB.logout(function(response) {
+            console.log('logout :: ', response);
+            //Removing access token form localStorage.
+            $('#loginBtn').show();
+            $('#logoutBtn').hide();
+            $('#userDetails').hide();
+        });
+    }
+
+    fbAsyncInit();
+
+</script>
+
+<div id="userDetails" style="display: none;">
+    <img id="userPic" src="">
+
+
+    <div id="userInfo">
+    </div>
+</div>
+<button id="loginBtn" onclick="logIn();" value="Login">Login</button>
+<button id="logoutBtn" onclick="logOut();" value="Logout" style="display: none;">Logout</button>
+
+</body>
+</html>
