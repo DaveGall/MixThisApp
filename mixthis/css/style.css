@@ -3,6 +3,10 @@
     background-color: #403124;
 }
 
+.results{
+    border: outset;
+    background-color: #ffffff;
+}
 
 .image{
     width: 960px;
