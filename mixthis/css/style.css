@@ -3,9 +3,20 @@
     background-color: #403124;
 }
 
+.headerSection{
+    border: inset;
+    height: 100px;
+}
+.headerSection ul li{
+    display: inline-block;
+}
 .results{
-    border: outset;
-    background-color: #ffffff;
+    border: #e5b081 outset;
+    background-color: #ffc490;
+    color: #403124;
+}
+.results h4, .results ul li, .results p{
+    color: #403124;
 }
 
 .image{
@@ -19,6 +30,17 @@
     background-position: top;
 
 }
+
+.detailsPage {
+    width: 960px;
+    height: 720px;
+    margin: 0 auto;
+    border: outset #403124;
+}
+
 .login, .signUp{
     margin-top: 360px;
+}
+#drinkButton{
+    float: left;
 }

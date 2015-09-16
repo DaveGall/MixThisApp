@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <link href="css/style.css" rel="stylesheet"/>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="js/jquery.js"></script>
     <script src="js/main.js" type="javascript"></script>
     <title>Details Page</title>
 </head>
 <body>
 
-<div class="container-fluid image">
+<div class="container-fluid detailsPage">
+
+    <header class="headerSection">
+        <ul>
+            <li><a href="search.html"> Search</a></li>
+        </ul>
+    </header>
 
     <div class="results">
         <h4 class="drinkTitle">Blue Lagoon</h4>
@@ -20,6 +27,19 @@
         </ul>
         <p class="directions">This section will display the instructions for making the selected drink.</p>
     </div>
+
+    <div id="placeholder"></div>
+    <script>
+        $.getJSON('data.json', function(data) {
+            var output="<ul>";
+            for (var i in data.drinks) {
+                output+="<li>" + data.drinks[i].drink + " Ingredients " + data.drinks[i].ingredients.in1+", "+data.drinks[i].ingredients.in2 + "--" + data.drinks[i].instructions+"</li>";
+            }
+
+            output+="</ul>";
+            document.getElementById("placeholder").innerHTML=output;
+        });
+    </script>
 
 </div>
 </body>

@@ -1,96 +1,96 @@
-{
+ {
   "drinks": [
     {"drink": "Pomegranate Martini",
-      "ingredients": [
+      "ingredients":
     {
       "in1": "4 parts Lemon Vodka",
       "in2": "1 part Lemon Juice",
       "in3": "1 part Pomegranate Juice",
       "in4": "2 parts Simple Syrup"
     }
-    ],
+    ,
     "instructions": "Shake all ingredients well with ice and strain into a martini glass."
     },
     {"drink": "Blue Lagoon",
-    "ingredients": [
+    "ingredients":
       {"in1": "1 part Vodka",
       "in2": "1 part Blue Curacao",
       "in3": "4 parts Lemonade",
       "in4": "1 Cherry"}
-    ],
+    ,
     "instructions": "Pour Vodka and Curacao in a shaker with ice, shake well and strain into an ice filled high ball glass, top with lemonade, garnish with cherry and serve."},
     {"drink": "Woo Woo",
-    "inredients": [
+    "ingredients":
       {"in1": "2 parts Vodka",
       "in2": "1 part Peach Schnapps",
       "in3": "4 parts Cranberry Juice"}
-    ],
+    ,
     "instructions": "Pour all ingredients in a high ball glass filled with ice, garnish and serve."},
     {"drink": "Malibu Paradise",
-    "ingredients": [
+    "ingredients":
       {"in1": "2 parts Coconut Rum",
       "in2": "1 part Vodka",
       "in3": "2 parts Cranberry Juice",
       "in4": "1 part Pineapple Juice"}
-    ],
+    ,
     "instructions": "Pour ingredients into a cocktail shaker half filled with ice. Shake well, pour into a chilled cocktail glass."},
     {"drink": "Bermuda Mai Tai",
-    "ingredients": [
+    "ingredients":
       {"in1": "2 parts Tequila",
       "in2": "2 parts Orange Liqueur",
       "in3": "2 parts Peach Schnapps",
       "in4": "1 part Light Rum",
       "in5": "1 part Dark Rum",
       "in6": "6 parts Pineapple Juice"}
-    ],
+    ,
     "instructions": "Fill a martini shaker about half full with ice cubes then pour the Tequila, Orange Liqueur, Peach Schnapps and Light rum in. Fill with roughly the same amount of Pineapple Juice and shake well. Pour into a large glass with crushed ice. Top off with the Dark Rum and stir slightly."},
     {"drink": "Cabo Wabo",
-    "ingredients": [
+    "ingredients":
       {"in1": "2 parts Tequila",
       "in2": "1 part Orange Liqueur",
       "in3": "2 parts Sweet and Sour Mix",
       "in4": "4 parts Cranberry Juice",
       "in5": "Splash of Lime Juice"}
-    ],
+    ,
     "instructions": "Pour the Tequila, Orange Liqueur, Sweet and Sour Mix, and Cranberry Juice into a cocktail shaker filled with ice cubes. Shake vigorously. Pour into a magarita glass and add the Lime Juice."},
     {"drink": "Cosmopolitan",
-    "ingredients": [
+    "ingredients":
       {"in1": "2 parts Vodka",
       "in2": "1 part Orange Liqueur",
       "in3": "1 part Lime Juice",
       "in4": "1 part Cranberry Juice"}
-    ],
+    ,
     "instructions": "Shake Vodka, Orange Liqueur, Lime, and Cranberry Juice vigorously in a shaker with ice. Strain into a martini glass, garnish with a Lime wedge on the rim of the glass."},
     {"drinks": "Vodka and Coke",
-    "ingredients": [
+    "ingredients":
       {"in1": "2 parts Vodka",
       "in2": "4 parts Coke"}
-    ],
+    ,
     "instructions": "Pour Vodka into a glass half full of ice and cola and serve."},
     {"drink": "Fox Poison",
-    "ingredients": [
+    "ingredients":
       {"in1": "4 parts Vodka",
       "in2": "2 parts Blue Curacao",
       "in3": "2 parts Lime Juice",
       "in4": "Splash of Grenadine",
       "in5": " Sprite"}
-    ],
+    ,
     "instructions": "Begin with Vodka, then Blue Curacao, then add the Lime Juice and mix in the Grenadine. Gently stir, fill up with Sprite and put some ice cubes in."},
     {"drink": "17 Twist",
-    "ingredients": [
+    "ingredients":
       {"in1": "4 parts Raspberry Vodka",
       "in2": "20oz. Bottle of Citrus Soda"}
-    ],
+    ,
     "instructions": "Empty about a quarter of the Citrus Soda and then fill with the Vodka, stir lightly and enjoy."},
     {"drink": "Mojito",
-    "ingredients": [
+    "ingredients":
       {"in1": "2 parts Bacardi Rum",
       "in2": "4 Lime Wedges",
       "in3": "12 Fresh Mint Leaves",
       "in4": "2 tsp Caster Sugar",
       "in5": "1 part Soda Water/Club Soda",
       "in6": "Fresh Mint to Granish"}
-    ],
+    ,
     "instructions": "Gently press together the limes and sugar. Clap the mint leaves in your hand, rub them on the rim of the glass and drop them in. Fill the glass half full with ice, add Bacardi Rum and stir. Top up with crushed ice, a splash of soda and a mint garnish."}
 ]
 }
