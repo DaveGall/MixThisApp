@@ -29,7 +29,21 @@
     </div>
 
     <div id="placeholder"></div>
+
     <script>
+        $.getJSON('data.json', function(data) {
+            /*console.log(data);*/
+            var output = '<ul class="searchResults">';
+            $.each(data, function (key, val) {
+                output += '<li>';
+                output += '<h3>' + val.drink + '</h3>';
+                output += '</li>';
+            });
+            output += '</ul>';
+            $('#placeholder').html(output);
+        });
+    </script>
+    <!--<script>
         $.getJSON('data.json', function(data) {
             var output="<ul>";
             for (var i in data.drinks) {
@@ -39,7 +53,7 @@
             output+="</ul>";
             document.getElementById("placeholder").innerHTML=output;
         });
-    </script>
+    </script>-->
 
 </div>
 </body>
