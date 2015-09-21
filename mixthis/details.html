@@ -29,6 +29,7 @@
     </div>
 
     <div id="placeholder"></div>
+    <h4 id="drinkTitle"></h4>
 
     <script>
         $.getJSON('data.json', function(data) {
@@ -43,17 +44,14 @@
             $('#placeholder').html(output);
         });
     </script>
-    <!--<script>
-        $.getJSON('data.json', function(data) {
-            var output="<ul>";
-            for (var i in data.drinks) {
-                output+="<li>" + data.drinks[i].drink + " Ingredients " + data.drinks[i].ingredients.in1+", "+data.drinks[i].ingredients.in2 + "--" + data.drinks[i].instructions+"</li>";
-            }
+    <script>
+        function myFunction(){
+            var item = document.getElementById("drink").value;
+            window.open('details.html');
+            console.log("Inside Function: "+item);
+        }
 
-            output+="</ul>";
-            document.getElementById("placeholder").innerHTML=output;
-        });
-    </script>-->
+    </script>
 
 </div>
 </body>
