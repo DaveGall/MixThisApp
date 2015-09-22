@@ -35,85 +35,81 @@
     </div>
 </div>
 <script>
-    function calculate(){
+    function calculate() {
         var weight = document.getElementById('weight').value;
-        var weightGrams = Number(weight)* 454;
+        var weightGrams = Number(weight) * 454;
         var gender = document.getElementById('gender').value;
         var liqueur = document.getElementById('liqueur').value;
-        var liqueurGrams = Number(liqueur)*14;
+        var liqueurGrams = Number(liqueur) * 14;
         var beer = document.getElementById('beer').value;
-        var beerGrams = Number(beer)*14;
+        var beerGrams = Number(beer) * 14;
         var wine = document.getElementById('wine').value;
-        var wineGrams = Number(wine)*14;
+        var wineGrams = Number(wine) * 14;
         var hours = document.getElementById('hours').value;
-        var hoursTimes = Number(hours)*.015;
+        var hoursTimes = Number(hours) * .015;
         var total = Number(wine) * Number(hours);
-        if((gender === 'm' || gender === 'M') && (beer !== '' && liqueur !== '' && wine !== '')) {
+        if ((gender === 'm' || gender === 'M') && (beer !== '' && liqueur !== '' && wine !== '')) {
             gender = .68;
-            var answer = ((parseInt(liqueurGrams)+parseInt(beerGrams)+parseInt(wineGrams))/(Number(weightGrams)*Number(gender))*100)- (Number(hoursTimes));
+            var answer = ((parseInt(liqueurGrams) + parseInt(beerGrams) + parseInt(wineGrams)) / (Number(weightGrams) * Number(gender)) * 100) - (Number(hoursTimes));
             return document.getElementById('bacAnswer').innerHTML = parseFloat(answer).toFixed(2);
-        }else if((gender === 'm' || gender === 'M') && (beer !== '' && liqueur !== '')){
+        } else if ((gender === 'm' || gender === 'M') && (beer !== '' && liqueur !== '')) {
             gender = .68;
-            var answer = ((parseInt(liqueurGrams)+parseInt(beerGrams))/(Number(weightGrams)*Number(gender))*100)- (Number(hoursTimes));
+            var answer = ((parseInt(liqueurGrams) + parseInt(beerGrams)) / (Number(weightGrams) * Number(gender)) * 100) - (Number(hoursTimes));
             return document.getElementById('bacAnswer').innerHTML = parseFloat(answer).toFixed(2);
-        }else if((gender === 'm' || gender === 'M') && (wine !== '' && liqueur !== '')){
+        } else if ((gender === 'm' || gender === 'M') && (wine !== '' && liqueur !== '')) {
             gender = .68;
-            var answer = ((parseInt(liqueurGrams)+parseInt(wineGrams))/(Number(weightGrams)*Number(gender))*100)- (Number(hoursTimes));
+            var answer = ((parseInt(liqueurGrams) + parseInt(wineGrams)) / (Number(weightGrams) * Number(gender)) * 100) - (Number(hoursTimes));
             return document.getElementById('bacAnswer').innerHTML = parseFloat(answer).toFixed(2);
-        }else if((gender === 'm' || gender === 'M') && (wine !== '' && beer !== '')){
+        } else if ((gender === 'm' || gender === 'M') && (wine !== '' && beer !== '')) {
             gender = .68;
-            var answer = ((parseInt(beerGrams)+parseInt(wineGrams))/(Number(weightGrams)*Number(gender))*100)- (Number(hoursTimes));
+            var answer = ((parseInt(beerGrams) + parseInt(wineGrams)) / (Number(weightGrams) * Number(gender)) * 100) - (Number(hoursTimes));
             return document.getElementById('bacAnswer').innerHTML = parseFloat(answer).toFixed(2);
-        }else if(gender === 'm' || gender === 'M' && liqueur !== ''){
+        } else if (gender === 'm' || gender === 'M' && liqueur !== '') {
             gender = Number(.68);
-            var answer = ((Number(liqueurGrams))/(Number(weightGrams)*Number(gender))*100)- (Number(hoursTimes));
+            var answer = ((Number(liqueurGrams)) / (Number(weightGrams) * Number(gender)) * 100) - (Number(hoursTimes));
             return document.getElementById('bacAnswer').innerHTML = parseFloat(answer).toFixed(2);
-        }else if(gender === 'm' || gender === 'M' && beer !== ''){
+        } else if (gender === 'm' || gender === 'M' && beer !== '') {
             gender = Number(.68);
-            var answer = ((Number(beerGrams))/(Number(weightGrams)*Number(gender))*100)- (Number(hoursTimes));
+            var answer = ((Number(beerGrams)) / (Number(weightGrams) * Number(gender)) * 100) - (Number(hoursTimes));
             return document.getElementById('bacAnswer').innerHTML = parseFloat(answer).toFixed(2);
-        }else if(gender === 'm' || gender === 'M' && wine !== ''){
+        } else if (gender === 'm' || gender === 'M' && wine !== '') {
             gender = .68;
-            var answer = ((Number(wineGrams))/(Number(weightGrams)*Number(gender))*100)- (Number(hoursTimes));
+            var answer = ((Number(wineGrams)) / (Number(weightGrams) * Number(gender)) * 100) - (Number(hoursTimes));
             return document.getElementById('bacAnswer').innerHTML = parseFloat(answer).toFixed(2);
-        }else if((gender === 'f' || gender === 'F') && (beer !== '' && liqueur !== '' && wine !== '')){
+        } else if ((gender === 'f' || gender === 'F') && (beer !== '' && liqueur !== '' && wine !== '')) {
             gender = .55;
-            var answer = ((parseInt(liqueurGrams)+parseInt(beerGrams)+parseInt(wineGrams))/(Number(weightGrams)*Number(gender))*100)- (Number(hoursTimes));
+            var answer = ((parseInt(liqueurGrams) + parseInt(beerGrams) + parseInt(wineGrams)) / (Number(weightGrams) * Number(gender)) * 100) - (Number(hoursTimes));
             return document.getElementById('bacAnswer').innerHTML = parseFloat(answer).toFixed(2);
-        }else if((gender === 'f' || gender === 'F') && (beer !== '' && liqueur !== '')){
+        } else if ((gender === 'f' || gender === 'F') && (beer !== '' && liqueur !== '')) {
             gender = .55;
-            var answer = ((parseInt(liqueurGrams)+parseInt(beerGrams))/(Number(weightGrams)*Number(gender))*100)- (Number(hoursTimes));
+            var answer = ((parseInt(liqueurGrams) + parseInt(beerGrams)) / (Number(weightGrams) * Number(gender)) * 100) - (Number(hoursTimes));
             return document.getElementById('bacAnswer').innerHTML = parseFloat(answer).toFixed(2);
-        }else if((gender === 'f' || gender === 'F') && (wine !== '' && liqueur !== '')){
+        } else if ((gender === 'f' || gender === 'F') && (wine !== '' && liqueur !== '')) {
             gender = .55;
-            var answer = ((parseInt(liqueurGrams)+parseInt(wineGrams))/(Number(weightGrams)*Number(gender))*100)- (Number(hoursTimes));
+            var answer = ((parseInt(liqueurGrams) + parseInt(wineGrams)) / (Number(weightGrams) * Number(gender)) * 100) - (Number(hoursTimes));
             return document.getElementById('bacAnswer').innerHTML = parseFloat(answer).toFixed(2);
-        }else if((gender === 'f' || gender === 'F') && (wine !== '' && beer !== '')){
+        } else if ((gender === 'f' || gender === 'F') && (wine !== '' && beer !== '')) {
             gender = .55;
-            var answer = ((parseInt(beerGrams)+parseInt(wineGrams))/(Number(weightGrams)*Number(gender))*100)- (Number(hoursTimes));
+            var answer = ((parseInt(beerGrams) + parseInt(wineGrams)) / (Number(weightGrams) * Number(gender)) * 100) - (Number(hoursTimes));
             return document.getElementById('bacAnswer').innerHTML = parseFloat(answer).toFixed(2);
-        }else if(gender === 'f' || gender === 'F' && liqueur !== ''){
+        } else if (gender === 'f' || gender === 'F' && liqueur !== '') {
             gender = .55;
-            var answer = ((parseInt(liqueurGrams))/(Number(weightGrams)*Number(gender))*100)- (Number(hoursTimes));
+            var answer = ((parseInt(liqueurGrams)) / (Number(weightGrams) * Number(gender)) * 100) - (Number(hoursTimes));
             return document.getElementById('bacAnswer').innerHTML = parseFloat(answer).toFixed(2);
-        }else if(gender === 'f' || gender === 'F' && beer !== ''){
+        } else if (gender === 'f' || gender === 'F' && beer !== '') {
             gender = .55;
-            var answer = ((parseInt(beerGrams))/(Number(weightGrams)*Number(gender))*100)- (Number(hoursTimes));
+            var answer = ((parseInt(beerGrams)) / (Number(weightGrams) * Number(gender)) * 100) - (Number(hoursTimes));
             return document.getElementById('bacAnswer').innerHTML = parseFloat(answer).toFixed(2);
+        } else if (gender === 'f' || gender === 'F' && wine !== '') {
+            gender = .55;
+            var answer = ((parseInt(wineGrams)) / (Number(weightGrams) * Number(gender)) * 100) - (Number(hoursTimes));
+            return document.getElementById('bacAnswer').innerHTML = parseFloat(answer).toFixed(2);
+        } else {
+            alert("Please enter one of these values into the gender portion: m, M, f or F. Thank you.")
         }
-        //document.getElementById('bacAnswer').innerHTML = total;
-        console.log("Weight: "+weightGrams+" Gender: "+gender+" Liqueur: "+liqueurGrams+" Beer: "+beerGrams+" Wine: "+wineGrams+" Hours: "+hoursTimes);
-        if(gender === 'm' || gender === 'M' && liqueur !== ''){
-            gender += .68;
-            var answer = (Number(liqueur)*14)/(Number(weightGrams)*Number(gender))*100;
-            return document.getElementById('bacAnswer').innerHTML = answer
-
-        }else{
-            gender = .55;
-            return gender
-        }
-
     }
+
+
     //(Alcohol in grams / (weight in grams * M/F))*100--- M = .68, F = .55.
 </script>
 </body>
