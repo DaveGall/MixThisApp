@@ -1,12 +1,38 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
     <script src="js/main.js" type="javascript"></script>
     <title>BAC Calculator Page</title>
 </head>
 <body>
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <form>
+                <label for="weight">Weight</label>
+                <input id="weight" type="number" placeholder="weight"/>
+                <label for="gender">Gender</label>
+                <input id="gender" type="text" placeholder="M/F"/>
+                <label for="liqueur">1.5 oz Shots</label>
+                <input id="liqueur" type="number" placeholder="1"/>
+                <label for="beer">12 oz. Beers</label>
+                <input id="beer" type="number" placeholder="1"/>
+                <label for="wine">5 oz. Glasses of Wine</label>
+                <input id="wine" type="number" placeholder="1"/>
+                <label for="hours">Hours Drinking</label>
+                <input id="hours" type="number" placeholder="1"/>
+                <button type="submit" id="calcBAC" onclick="calculate()">Submit</button>
+            </form>
+            <h3>Your BAC is</h3>
+            <p id="bacAnswer"></p>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
 </body>
 </html>

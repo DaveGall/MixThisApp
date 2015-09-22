@@ -22,6 +22,7 @@
         <form>
             <div>
                 <h4>Search by drink</h4>
+                <hr>
                 <label for="drink">Drink</label>
                 <select id="drink" onchange="myFunction()">
                     <option value="Pomegranate Martini" id="pomegranateMartini">Pomegranate Martini</option>
@@ -51,6 +52,7 @@
             </div>
 
             <h4>Search by ingredients</h4>
+            <hr>
             <label for="ingredients">Ingredients</label>
             <select id="ingredients" onchange="ingredientsFunction()">
                 <option value="vodka">Vodka</option>
@@ -82,8 +84,12 @@
             </form>
         </div><!--End the form column/div-->
 
-        <div class="col-md-4"></div>
         <div class="col-md-4">
+            <h3>Another Section</h3>
+            <p>This will have some stuff in it.</p>
+        </div>
+        <div class="col-md-4 results">
+            <h3>Results</h3>
             <h3 id="drinkDisplay"></h3>
             <h4 id="drinkTitle"></h4>
         </div>

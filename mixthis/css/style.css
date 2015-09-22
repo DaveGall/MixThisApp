@@ -7,8 +7,25 @@
     border: inset;
     height: 100px;
 }
-.headerSection ul li{
+
+.headerNav li{
     display: inline-block;
+    margin-left: 100px;
+}
+.normalLogin{
+    margin-top: 100px;
+}
+label, input{
+    display: block;
+}
+form button, label{
+    margin-top: 20px;
+}
+.facebookDiv{
+    margin-top: 30px;
+}
+button{
+    border-radius: 10px;
 }
 .results{
     border: #e5b081 outset;
@@ -24,10 +41,10 @@
     height: 720px;
     margin: 0 auto;
     border: outset #ffc490;
-    background-color: #ffffff;
+    /*background-color: #ffffff;
     background-image: url("../images/images/logo_03.png");
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: top;*/
 
 }
 

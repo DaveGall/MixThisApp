@@ -122,32 +122,43 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
 
 
 <div class="container-fluid image">
+    <header class="nav nav-tabs">
+        <ul class="headerNav">
+            <li><a href="search.php">Search</a> </li>
+            <li><a href="BAC.php">BAC</a> </li>
+            <li><a href="details.html">Details</a> </li>
+        </ul>
+    </header>
     <div class="row">
         <div class="col-md-4 left">
+            <h3>Sign in with Facebook</h3>
+            <hr>
             <div class="facebookDiv">
                 <!-- Facebook login button -->
                 <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true" scope="public_profile,email" onlogin="checkLoginState();"></div>
                 <div id="status"></div>
 
             </div>
+            <div class="normalLogin">
+                <h3>Login or Sign Up</h3>
+                <hr>
+                <form class="form-group" action="index.php" method="post">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email"/>
+                    <label for="userName">UserName</label>
+                    <input type="text" id="userName" name="username"/>
+
+                    <button id="submitButton" type="submit" name="submit" class="btn-primary submit">Submit</button>
+                </form>
+            </div>
         </div>
         <div class="col-md-4 middle">
-            <ul class="headerNav">
-                <li><a href="search.php">Search</a></li>
-                <li><a href="BAC.html">BAC Calculator</a></li>
-            </ul>
+
 
 
         </div>
         <div class="col-md-4 right">
-            <form class="form-group" action="index.php" method="post">
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email"/>
-                <label for="userName">UserName</label>
-                <input type="text" id="userName" name="username"/>
 
-                <button type="submit" name="submit" class="btn-default submit">Submit</button>
-            </form>
         </div>
 
 
