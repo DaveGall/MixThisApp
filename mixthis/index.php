@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
     <meta charset="UTF-8">
     <meta  http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <link href="css/style.css" rel="stylesheet"/>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>

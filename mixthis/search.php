@@ -6,6 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" datatype="jsonp">
+    <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" datatype="jsonp"></script>
     <link href="css/style.css" rel="stylesheet"/>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>

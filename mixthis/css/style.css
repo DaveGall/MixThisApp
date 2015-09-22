@@ -47,7 +47,32 @@ button{
     background-position: top;*/
 
 }
-
+body{
+    background-color: #403124;
+}
+.bacPage{
+    border: 4px #ffc490 outset;
+    width: 40%;
+    height: auto;
+    box-shadow: 2px 2px 2px #7f6248;
+    background-color: #bf936c;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+h2{
+    text-align: center;
+    font-family: 'Tangerine', serif;
+}
+#bacAnswer{
+    border: 1px #000000 outset;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    font-size: 1.5em;
+}
+.formCenter{
+    margin: 2% 35%;
+}
 .detailsPage {
     width: 960px;
     height: 720px;
