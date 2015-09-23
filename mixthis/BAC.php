@@ -4,15 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
     <link href="css/style.css" rel="stylesheet"/>
     <script src="js/main.js" type="javascript"></script>
     <title>BAC Calculator Page</title>
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4">
-            <form>
+<header class="nav nav-tabs">
+    <ul class="headerNav">
+        <li><a href="search.php">Search</a> </li>
+        <li><a href="#">BAC</a> </li>
+        <li><a href="details.html">Details</a> </li>
+    </ul>
+</header>
+<div class="container-fluid bacPage">
+    <h1 class="title">Mix This</h1>
+    <h2>BAC Calculator</h2>
+    <hr>
+
+        <div class="formCenter">
+            <form class="formMargin">
                 <label for="weight">Weight</label>
                 <input id="weight" type="number" placeholder="weight"/>
                 <label for="gender">Gender</label>
@@ -27,12 +38,11 @@
                 <input id="hours" type="number" placeholder="1"/>
                 <button type="button" id="calcBAC" onclick="calculate()">Submit</button>
             </form>
-            <h3>Your BAC is</h3>
+            <hr>
+            <h3 class="niceFont">Your BAC is</h3>
             <p id="bacAnswer"></p>
         </div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
-    </div>
+
 </div>
 <script>
     function calculate() {
