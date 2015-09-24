@@ -17,8 +17,13 @@
         <li><a href="details.html">Details</a> </li>
     </ul>
 </header>
+
 <div class="container-fluid bacPage">
     <h1 class="title">Mix This</h1>
+    <p class="lightText">Don't get yourself behind the wheel if you are to impaired to drive.
+        Fill out this little questionnaire to see if
+        you are okay to drive yourself and your friends home.
+        If you are over the limit in your state then take a cab.</p>
     <h2>BAC Calculator</h2>
     <hr>
 
@@ -41,6 +46,7 @@
             <hr>
             <h3 class="niceFont">Your BAC is</h3>
             <p id="bacAnswer"></p>
+
         </div>
 
 </div>

@@ -1,16 +1,20 @@
 <?php
-
+session_start();
+if(isset($_SESSION['success'])){
+    echo $_SESSION['success'];
+    unset($_SESSION['success']);
+}
 
 
 $user="root";//Sets a variable for the name of the user
 $pass="root";//Sets a variable for the password of that user
-$dbh = new PDO('mysql:host=localhost;dbname=mix_this;port=8889', $user, $pass);//Sets a variable for the address to the specific database, port, username and password to allow access.
+$dbh = new PDO('mysql:host=localhost;dbname=mix_this;port=8888', $user, $pass);//Sets a variable for the address to the specific database, port, username and password to allow access.
 if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was submitted
     $email=$_POST['email']; //Sets a variable to grab the data entered into the input with the name email
-    $username=$_POST['username'];//Sets a variable to grab the data entered into the input with the name firstname
+    $uName=$_POST['userName'];//Sets a variable to grab the data entered into the input with the name firstname
     $stmt=$dbh->prepare("INSERT INTO users (email, username) VALUES (:email, :username);");//Creates a variable that will insert the fruit name and fruit color values into their respective columns
     $stmt->bindParam(':email', $email);//This passes the entered value for $fruitname into the fruitname column of the database
-    $stmt->bindParam(':username', $username);//Places the entered value from $color into its place in the database.
+    $stmt->bindParam(':username', $uName);//Places the entered value from $color into its place in the database.
     $stmt->execute();//Executes the whole statement the data transfer process.
 
 }
@@ -27,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <link href="css/style.css" rel="stylesheet"/>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
     <script src="js/jquery.js" type="javascript"></script>
     <script src="js/bootstrap.min.js" type="javascript"></script>
     <script src="js/main.js" type="javascript"></script>
@@ -50,7 +54,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
 
 </head>
 <body>
-<div id="fb-root"></div>
 <script>(function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
@@ -121,18 +124,23 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
     }
 </script>
 
+<header class="nav nav-tabs">
+    <ul class="headerNav">
+        <li><a href="search.php">Search</a> </li>
+        <li><a href="BAC.php">BAC</a> </li>
+        <li><a href="details.html">Details</a> </li>
+    </ul>
+</header>
 
-<div class="container-fluid image">
-    <header class="nav nav-tabs">
-        <ul class="headerNav">
-            <li><a href="search.php">Search</a> </li>
-            <li><a href="BAC.php">BAC</a> </li>
-            <li><a href="details.html">Details</a> </li>
-        </ul>
-    </header>
+<div class="container-fluid bacPage">
+    <h1 class="title">Mix This</h1>
+
+    <p class="titleText">Your own personal bartender.</p>
+
     <div class="row">
         <div class="col-md-4 left">
-            <h3>Sign in with Facebook</h3>
+            <div id="fb-root"></div>
+            <h3 class="normalText">Sign in with Facebook</h3>
             <hr>
             <div class="facebookDiv">
                 <!-- Facebook login button -->
@@ -140,37 +148,58 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {//This checks to see if anything was su
                 <div id="status"></div>
 
             </div>
-            <div class="normalLogin">
-                <h3>Login or Sign Up</h3>
-                <hr>
-                <form class="form-group" action="index.php" method="post">
-                    <label for="email">Email</label>
-                    <input type="text" id="email" name="email"/>
-                    <label for="userName">UserName</label>
-                    <input type="text" id="userName" name="username"/>
 
-                    <button id="submitButton" type="submit" name="submit" class="btn-primary submit">Submit</button>
-                </form>
-            </div>
         </div>
         <div class="col-md-4 middle">
+            <h4 class="normalText">Drink Responsibly</h4>
+            <hr>
+            <p>Remember all the little golden rules about drinking. Don't drink and drive, don't drink while pregnant
+            and make sure you are 21 before you start drinking. </p>
 
 
 
         </div>
         <div class="col-md-4 right">
+            <div class="normalLogin">
 
+                <h3 class="normalText">Login/Sign Up</h3>
+                <hr>
+                <form class="form-group" action="index.php" method="POST">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email"/>
+                    <label for="userName">UserName</label>
+                    <input type="text" id="userName" name="userName"/>
+
+                    <button id="calcBAC" type="submit" name="submit" class="submit">Submit</button>
+                    <h4>Welcome:</h4>
+                    <p id="user"></p>
+                </form>
+
+                <?php
+                function userData(){//function to catch all the data and return an array
+                    $uName = $_POST['userName'];//Grabs the data from the input for username
+                    $email = $_POST['email'];//grabs the data from the input for password
+
+                    return array("UserName " => $uName, "Email " => $email);//Returns all the data collected in an array.
+                }
+
+
+
+                if(isset($_POST['submit'])){//This if statement will check to see if the submit button was clicked
+                    $info = userData();//This stores the data collected from the userData function and places it into a variable.
+                    echo "<div class='left'>";//Div that will begin the form results that will display for the user.
+                    foreach($info as $attribute => $info){//This will run through the data in the array.
+                        echo "<p>{$attribute}:<span style='color:#1C2DB2'><strong> {$info}</strong></span></p>";//This will output each item in the array on a separate line.
+                    }
+                    echo "</div>";//This div ends the form results display.
+                }
+                ?>
+
+            </div>
         </div>
 
+<!--Select * From users Where username=$username and email=$email-->
 
-            <!--
-            $stmt = $dbh->prepare('SELECT id, username FROM users;');//This statement selects the id, fruitname and fruitcolor that was just passed through the databse.
-            $stmt->execute();//This will execute the variable above.
-            $result = $stmt->fetchall(PDO::FETCH_ASSOC);//Places all the values into this variable
-            foreach ($result as $key=>$value) {//Begins the loop that will go through the associative array and grab all the values.
-
-                echo '<ul><li>'.$key['username'].'</li><li>'.$key['email'].'</li></ul>'.'<a href="search.php?id='.$key['id'].'">Delete</a><br />';//Places the values in the selected section for display in the table.
-            }-->
 
         </div>
 

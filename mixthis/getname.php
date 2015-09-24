@@ -1,11 +1,12 @@
 <?php
 
+
 $user = "root";
 $pass = "root";
 $dbh = new PDO("mysql:host=localhost;dbname=mix_this;port=8888",$user,$pass);
 
 
-$stmnt = $dbh->prepare("select id, username, email from users order by rand() limit 1");
+$stmnt = $dbh->prepare("select id, username, email from users");
 $stmnt->execute();
 $result = $stmnt->fetchAll(PDO::FETCH_ASSOC);
 $result = array("users"=>$result);
